@@ -1,4 +1,8 @@
-const options = ["rock", "paper", "scissors"];
+const CHOICES = {
+  ROCK: "Rock",
+  PAPER: "Paper",
+  SCISSORS: "Scissors"
+};
 
 // Results of Game [Win,Loss,Draw]
 res = [0, 0];
@@ -8,8 +12,8 @@ function validateInput(string) {
 }
 
 function playerChoice() {
-  let choice = prompt("Enter one of Rock, Paper or Scissors").toLowerCase();
-  while (validateInput(choice) == false) {
+  const choice = prompt("Enter one of Rock, Paper or Scissors").toLowerCase();
+  while (!validateInput(choice)) {
     choice = prompt(
       " Wrong Input:Enter one of Rock, Paper or Scissors"
     ).toLowerCase();
@@ -27,9 +31,9 @@ function checkWinner(userChoice, randChoice) {
   if (userChoice === randChoice) {
     return 0;
   } else if (
-    (userChoice === "rock" && randChoice == "scissors") ||
-    (userChoice === "paper" && randChoice == "rock") ||
-    (userChoice === "scissors" && randChoice == "paper")
+    (userChoice === CHOICES.ROCK && randChoice == CHOICES.SCISSORS) ||
+    (userChoice === CHOICES.PAPER && randChoice == CHOICES.ROCK) ||
+    (userChoice === CHOICES.SCISSORS && randChoice == CHOICES.PAPER)
   ) {
     return 1;
   } else {
