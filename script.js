@@ -15,7 +15,7 @@ function playerChoice() {
   const choice = prompt("Enter one of Rock, Paper or Scissors").toLowerCase();
   while (!validateInput(choice)) {
     choice = prompt(
-      " Wrong Input:Enter one of Rock, Paper or Scissors"
+      "Wrong Input:Enter one of Rock, Paper or Scissors"
     ).toLowerCase();
   }
   return choice;
