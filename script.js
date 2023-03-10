@@ -4,7 +4,7 @@ const CHOICES = {
   SCISSORS: "Scissors"
 };
 
-// Results of Game [Win,Loss,Draw]
+// Results of Game [Win,Loss]
 res = [0, 0];
 
 function validateInput(string) {
